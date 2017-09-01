@@ -6,9 +6,9 @@ const expect = require('chai').expect;
 const path = require('path');
 
 const TMP_DIR = path.resolve(__dirname + '/../tmp');
-const INPUT_FILE = TMP_DIR + '/foo.js';
-const OTHER_FILE = TMP_DIR + '/other.js';
-const OUTPUT_FILE = TMP_DIR + '/bar.js';
+const INPUT_FILE = path.join(TMP_DIR, 'foo.js');
+const OTHER_FILE = path.join(TMP_DIR, 'other.js');
+const OUTPUT_FILE = path.join(TMP_DIR, 'bar.js');
 
 fs.removeSync(TMP_DIR);
 
