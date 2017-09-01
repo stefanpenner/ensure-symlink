@@ -6,6 +6,7 @@ used to implement a resilient "best-effort last write wins" symlink
 
 ```sh
 yarn add ensure-symlink
+
 # or
 
 npm install ensure-symlink
@@ -16,5 +17,3 @@ const ensureSymlink = require('ensure-symlink');
 
 ensureSymlink(from, to);
 ```
-
-
