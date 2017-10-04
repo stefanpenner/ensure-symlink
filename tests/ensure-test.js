@@ -55,5 +55,12 @@ describe('ensureSymlinkSync', function() {
 
     expect(fs.readlinkSync(OUTPUT_FILE)).to.eql(INPUT_FILE);
     expect(fs.readFileSync(OUTPUT_FILE, 'UTF8')).to.eql('OMG');
+
+    fs.unlinkSync(OUTPUT_FILE);
+
+    fs.writeFileSync(OUTPUT_FILE, 'FILE IN OUTPUT');
+
+    ensureSymlinkSync(INPUT_FILE, OUTPUT_FILE); // new link
+    expect(fs.readFileSync(OUTPUT_FILE, 'UTF8')).to.eql('OMG');
   });
 });
